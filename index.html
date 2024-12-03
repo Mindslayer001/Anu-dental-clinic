@@ -43,13 +43,13 @@
           <li class="contact-item">
             <ion-icon name="mail-outline"></ion-icon>
             <!-- FIXME: Change Email -->
-            <a href="mailto:info@example.com" class="contact-link">info@example.com</a>
+            <a href="mailto:anus02dental@gmail.com" class="contact-link">anus02dental@gmail.com</a>
           </li>
 
           <li class="contact-item">
             <ion-icon name="call-outline"></ion-icon>
             <!-- FIXME: Change phone Number -->
-            <a href="tel:+919121081357" class="contact-link">+91-7052-101-786</a>
+            <a href="tel:+919121081357" class="contact-link">+91-912-108-1357</a>
           </li>
 
         </ul>
@@ -63,7 +63,7 @@
           </li>
 
           <li>
-            <a href="#" class="social-link">
+            <a href="https://www.instagram.com/anu_dental_clinic/" class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -88,7 +88,7 @@
     <div class="header-bottom" data-header>
       <div class="container">
 
-        <a href="#" class="logo">Anu's Dental</a>
+        <a href="#" class="logo"> Anu's Dental Clinic</a>
 
         <nav class="navbar container" data-navbar>
           <ul class="navbar-list">
@@ -156,8 +156,10 @@
               routine check-ups to advanced procedures.
             </p>
 
-            <form action="" class="hero-form">
+            <form action="" method="POST" class="hero-form">
               <input type="email" name="email_address" aria-label="email" placeholder="Your Email Address..." required
+                class="email-field">
+                <input type="number" name="number" aria-label="tel" placeholder="Your Phone Number..." required
                 class="email-field">
 
               <button type="submit" class="btn">Get Call Back</button>
@@ -166,7 +168,7 @@
           </div>
 
           <figure class="hero-banner">
-            <img src="./assets/images/hero-banner.png" width="587" height="839" alt="hero banner" class="w-100">
+            <img src="./assets/images/hero-banner.jpeg" width="587" height="839" alt="hero banner" class="w-100">
           </figure>
 
         </div>
@@ -365,19 +367,20 @@
 
           <ul class="has-scrollbar">
 
-            <li class="scrollbar-item">
+            <li class="center">
               <div class="doctor-card">
 
                 <div class="card-banner img-holder" style="--width: 460; --height: 500;">
-                  <img src="./assets/images/doctor-3.png" width="460" height="500" loading="lazy" alt="Vincent Cooper"
+                  <img src="./assets/images/doctor-4.png" width="10" loading="lazy" alt="Danielle Bryant"
                     class="img-cover">
                 </div>
 
                 <h3 class="h3">
-                  <a href="#" class="card-title">Vincent Cooper</a>
+                  <a href="#" class="card-title">Dr.Palli Anusha (BDS ,FAGE)</a>
                 </h3>
 
-                <p class="card-subtitle">Dentist</p>
+                <p class="card-subtitle">Cosmetic Dental surgeon - </p>
+                
 
                 <ul class="card-social-list">
 
@@ -394,46 +397,7 @@
                   </li>
 
                   <li>
-                    <a href="#" class="card-social-link">
-                      <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
-                  </li>
-
-                </ul>
-
-              </div>
-            </li>
-
-            <li class="scrollbar-item">
-              <div class="doctor-card">
-
-                <div class="card-banner img-holder" style="--width: 460; --height: 500;">
-                  <img src="./assets/images/doctor-4.png" width="460" height="500" loading="lazy" alt="Danielle Bryant"
-                    class="img-cover">
-                </div>
-
-                <h3 class="h3">
-                  <a href="#" class="card-title">Danielle Bryant</a>
-                </h3>
-
-                <p class="card-subtitle">Dentist</p>
-
-                <ul class="card-social-list">
-
-                  <li>
-                    <a href="#" class="card-social-link">
-                      <ion-icon name="logo-facebook"></ion-icon>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" class="card-social-link">
-                      <ion-icon name="logo-twitter"></ion-icon>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" class="card-social-link">
+                    <a  href="https://www.instagram.com/anu_dental_clinic/"  class="card-social-link">
                       <ion-icon name="logo-instagram"></ion-icon>
                     </a>
                   </li>
@@ -737,7 +701,7 @@
           </li>
 
           <li>
-            <a href="#" class="social-link">
+            <a  href="https://www.instagram.com/anu_dental_clinic/"  class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -781,6 +745,38 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  <script>
+    document.querySelector('.hero-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent default form submission
+  
+    // Collect form data
+    const email = event.target.email_address.value;
+    const number = event.target.number.value;
+  
+    // API endpoint
+    const apiEndpoint =`https://script.google.com/macros/s/AKfycbx5Sh0YixSp4_mkuiXQRmz6OBvdf5_uu6IIDHAzgevB1-gOLwro3tl7ZqqxGfTwe8Mh/exec?email=${email}&number=${number}`;
+    console.log(apiEndpoint);
+    try {
+    // Send data to API
+    const response = await fetch(apiEndpoint, {
+    method: 'POST',
+    });
+    console.log(response)
+    if (response.ok) {
+    // Handle success
+    console.log('Form submitted successfully!');
+    } else {
+    // Handle errors
+    const errorData = await response.json();
+    console.log(`Error: ${errorData.message}`);
+    }
+    } catch (error) {
+    console.log(`An error occurred: ${error.message}`);
+    }
+    });
+    </script>
 
 </body>
 

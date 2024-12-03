@@ -269,7 +269,7 @@ body {
 .logo {
   color: var(--oxford-blue-1);
   font-family: var(--ff-poppins);
-  font-size: 3.4rem;
+  font-size: 25px;
   font-weight: var(--fw-800);
 }
 
@@ -357,7 +357,6 @@ body {
   margin-block-end: 15px;
 }
 
-.hero-form .btn { width: 100%; }
 
 
 
@@ -504,6 +503,26 @@ body {
 
 
 
+.has-scrollbar {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center;     /* Center the items vertically (if needed) */
+  gap: 30px;               /* Maintain spacing between items */
+  margin-inline: 15px;
+  padding-block-end: 40px;
+  margin-block-end: -20px;
+  scroll-snap-type: none;  /* Disable snapping since centering replaces scrolling */
+  overflow-x: hidden;      /* Disable horizontal scrolling */
+}
+
+.doctor-card {
+  padding: 30px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-4);
+  text-align: center;
+  min-height: 100%;
+  margin: 0 auto;          /* Center the card itself if needed */
+}
 
 
 /*-----------------------------------*\
@@ -849,13 +868,10 @@ body {
   .hero-form { position: relative; }
 
   .hero-form .email-field {
-    margin-block-end: 0;
-    padding-inline-end: 190px;
-  }
+    margin-block-end: 0;  }
 
   .hero-form .btn {
-    width: auto;
-    position: absolute;
+    width: 100%;
     top: 15px;
     right: 15px;
     bottom: 15px;
