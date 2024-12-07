@@ -449,6 +449,7 @@ body {
 .doctor-card .card-subtitle {
   color: var(--royal-blue-light);
   margin-block: 10px 15px;
+  font-size: 2.5rem;
 }
 
 .doctor-card .card-social-list {
